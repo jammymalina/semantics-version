@@ -10,13 +10,19 @@ Semantic versioning utility. Helps you validate and compare semantic versions.
 
 ## Usage
 
-### semanticVersion(version: string | number | number[], ...otherVersions: number[]): SemanticVersion
+### Import package
+
+```javascript
+import { semanticVersion } from '@semantics/semantic-version';
+// or
+const { semanticVersion } = require('@semantics/semantic-version');
+```
+
+### semanticVersion(version: string | number | number[], ...otherVersions: number[])
 
 Creates semantic version object.
 
 ```javascript
-import { semanticVersion } from '@semantics/version';
-
 // string
 semanticVersion('1.2.1'); // 1.2.1
 semanticVersion('1.2'); // 1.2.0
