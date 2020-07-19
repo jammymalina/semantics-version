@@ -1,0 +1,47 @@
+{
+  "name": "@semantics/version",
+  "version": "0.0.1",
+  "description": "Semantic versioning utility",
+  "main": "dist/lib.js",
+  "scripts": {
+    "build": "rm -rf dist && npm run lint && npm test && tsc",
+    "prepare": "npm run build",
+    "test": "mocha -r ts-node/register test/unit/**/*.ts",
+    "coverage": "nyc mocha -r ts-node/register test/unit/**/*.ts",
+    "lint": "eslint './{src,test}/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jammymalina/semantics-version.git"
+  },
+  "keywords": [
+    "semantics",
+    "version",
+    "versioning"
+  ],
+  "files": [
+    "/dist",
+    "/src"
+  ],
+  "author": "Jakub Jantosik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jammymalina/semantics-version/issues"
+  },
+  "homepage": "https://github.com/jammymalina/semantics-version#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "chai": "^4.2.0",
+    "eslint": "^7.4.0",
+    "mocha": "^8.0.1",
+    "npm": "^6.14.6",
+    "nyc": "^15.1.0",
+    "prettier": "^2.0.5",
+    "source-map-support": "^0.5.19",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
+}
