@@ -1,6 +1,6 @@
 {
-  "name": "@semantics/version",
-  "version": "0.0.1",
+  "name": "@semantics/semantic-version",
+  "version": "0.0.2",
   "description": "Semantic versioning utility",
   "main": "dist/lib.js",
   "scripts": {
@@ -16,6 +16,7 @@
   },
   "keywords": [
     "semantics",
+    "semantic",
     "version",
     "versioning"
   ],
