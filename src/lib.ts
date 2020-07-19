@@ -20,8 +20,8 @@ const fromNumArray = (version: number[]): number[] => {
   if (version.length === 0 || version.some((v) => typeof v !== 'number' || !Number.isInteger(v) || v < 0)) {
     return getInvalidVersion();
   }
-  const v = [...version];
-  return v.concat(new Array(3).fill(0).slice(v.length));
+  const result = [...version];
+  return result.concat(new Array(3).fill(0).slice(result.length));
 };
 
 const fromNumber = (major: number, other: number[]) => {
