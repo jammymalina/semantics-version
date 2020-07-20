@@ -24,22 +24,22 @@ const { semanticVersion } = require('@semantics/semantic-version');
 
 ##### Properties
 
-- [\_type](_semanticversion_.semanticversion.md#readonly-_type)
+- [\_type](#####readonly-_type)
 
 ##### Methods
 
-- [isNewer](_semanticversion_.semanticversion.md#isnewer)
-- [isOlder](_semanticversion_.semanticversion.md#isolder)
-- [isSame](_semanticversion_.semanticversion.md#issame)
-- [isSameOrNewer](_semanticversion_.semanticversion.md#issameornewer)
-- [isSameOrOlder](_semanticversion_.semanticversion.md#issameorolder)
-- [isValid](_semanticversion_.semanticversion.md#isvalid)
-- [major](_semanticversion_.semanticversion.md#major)
-- [minor](_semanticversion_.semanticversion.md#minor)
-- [patch](_semanticversion_.semanticversion.md#patch)
-- [toList](_semanticversion_.semanticversion.md#tolist)
-- [toShortString](_semanticversion_.semanticversion.md#toshortstring)
-- [toString](_semanticversion_.semanticversion.md#tostring)
+- [isNewer](#####isnewer)
+- [isOlder](#####isolder)
+- [isSame](#####issame)
+- [isSameOrNewer](#####issameornewer)
+- [isSameOrOlder](#####issameorolder)
+- [isValid](#####isvalid)
+- [major](#####major)
+- [minor](#####minor)
+- [patch](#####patch)
+- [toList](#####tolist)
+- [toShortString](#####toshortstring)
+- [toString](#####tostring)
 
 #### Properties
 
@@ -53,7 +53,7 @@ For internal use.
 
 ##### isNewer
 
-▸ **isNewer**(`v`: [SemanticVersion](_semanticversion_.semanticversion.md) | number[] | string): _boolean_
+▸ **isNewer**(`v`: [SemanticVersion](###SemanticVersion) | number[] | string): _boolean_
 
 Checks if a semantic version is newer as another semantic version. The first argument will be parsed as a semantic version, if not already so.
 
@@ -66,9 +66,9 @@ semanticVersion('1.3.0').isNewer([1, 2, 6]); // true
 
 **Parameters:**
 
-| Name | Type                                                                                  | Description |
-| ---- | ------------------------------------------------------------------------------------- | ----------- |
-| `v`  | [SemanticVersion](_semanticversion_.semanticversion.md) &#124; number[] &#124; string | A version   |
+| Name | Type                                                                | Description |
+| ---- | ------------------------------------------------------------------- | ----------- |
+| `v`  | [SemanticVersion](###SemanticVersion) &#124; number[] &#124; string | A version   |
 
 **Returns:** _boolean_
 
@@ -76,7 +76,7 @@ semanticVersion('1.3.0').isNewer([1, 2, 6]); // true
 
 ##### isOlder
 
-▸ **isOlder**(`v`: [SemanticVersion](_semanticversion_.semanticversion.md) | number[] | string): _boolean_
+▸ **isOlder**(`v`: [SemanticVersion](###SemanticVersion) | number[] | string): _boolean_
 
 Checks if a semantic version is older as another semantic version. The first argument will be parsed as a semantic version, if not already so.
 
@@ -89,9 +89,9 @@ semanticVersion('1.1.3').isOlder([1, 2, 3]); // true
 
 **Parameters:**
 
-| Name | Type                                                                                  | Description |
-| ---- | ------------------------------------------------------------------------------------- | ----------- |
-| `v`  | [SemanticVersion](_semanticversion_.semanticversion.md) &#124; number[] &#124; string | A version   |
+| Name | Type                                                                | Description |
+| ---- | ------------------------------------------------------------------- | ----------- |
+| `v`  | [SemanticVersion](###SemanticVersion) &#124; number[] &#124; string | A version   |
 
 **Returns:** _boolean_
 
@@ -99,7 +99,7 @@ semanticVersion('1.1.3').isOlder([1, 2, 3]); // true
 
 ##### isSame
 
-▸ **isSame**(`v`: [SemanticVersion](_semanticversion_.semanticversion.md) | number[] | string): _boolean_
+▸ **isSame**(`v`: [SemanticVersion](###SemanticVersion) | number[] | string): _boolean_
 
 Checks if a semantic version is the same as another semantic version. The first argument will be parsed as a semantic version, if not already so.
 
@@ -112,9 +112,9 @@ semanticVersion('1.2.3').isSame([1, 2, 3]); // true
 
 **Parameters:**
 
-| Name | Type                                                                                  | Description |
-| ---- | ------------------------------------------------------------------------------------- | ----------- |
-| `v`  | [SemanticVersion](_semanticversion_.semanticversion.md) &#124; number[] &#124; string | A version   |
+| Name | Type                                                                | Description |
+| ---- | ------------------------------------------------------------------- | ----------- |
+| `v`  | [SemanticVersion](###SemanticVersion) &#124; number[] &#124; string | A version   |
 
 **Returns:** _boolean_
 
@@ -122,7 +122,7 @@ semanticVersion('1.2.3').isSame([1, 2, 3]); // true
 
 ##### isSameOrNewer
 
-▸ **isSameOrNewer**(`v`: [SemanticVersion](_semanticversion_.semanticversion.md) | number[] | string): _boolean_
+▸ **isSameOrNewer**(`v`: [SemanticVersion](###SemanticVersion) | number[] | string): _boolean_
 
 Checks if a semantic version is newer or the same as another semantic version. The first argument will be parsed as a semantic version, if not already so.
 
@@ -135,9 +135,9 @@ semanticVersion('1.4.3').isSameOrNewer([1, 3, 2]); // true
 
 **Parameters:**
 
-| Name | Type                                                                                  | Description |
-| ---- | ------------------------------------------------------------------------------------- | ----------- |
-| `v`  | [SemanticVersion](_semanticversion_.semanticversion.md) &#124; number[] &#124; string | A version   |
+| Name | Type                                                                | Description |
+| ---- | ------------------------------------------------------------------- | ----------- |
+| `v`  | [SemanticVersion](###SemanticVersion) &#124; number[] &#124; string | A version   |
 
 **Returns:** _boolean_
 
@@ -145,7 +145,7 @@ semanticVersion('1.4.3').isSameOrNewer([1, 3, 2]); // true
 
 ##### isSameOrOlder
 
-▸ **isSameOrOlder**(`v`: [SemanticVersion](_semanticversion_.semanticversion.md) | number[] | string): _boolean_
+▸ **isSameOrOlder**(`v`: [SemanticVersion](###SemanticVersion) | number[] | string): _boolean_
 
 Checks if a semantic version is older or the same as another semantic version. The first argument will be parsed as a semantic version, if not already so.
 
@@ -158,9 +158,9 @@ semanticVersion('1.1.5').isSameOrOlder([1, 2, 1]); // true
 
 **Parameters:**
 
-| Name | Type                                                                                  | Description |
-| ---- | ------------------------------------------------------------------------------------- | ----------- |
-| `v`  | [SemanticVersion](_semanticversion_.semanticversion.md) &#124; number[] &#124; string | A version   |
+| Name | Type                                                                | Description |
+| ---- | ------------------------------------------------------------------- | ----------- |
+| `v`  | [SemanticVersion](###SemanticVersion) &#124; number[] &#124; string | A version   |
 
 **Returns:** _boolean_
 
