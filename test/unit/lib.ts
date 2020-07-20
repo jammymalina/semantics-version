@@ -10,6 +10,7 @@ describe('semanticVersion', () => {
       const version = semanticVersion('1.2.5');
       expect(version.toString()).to.equal('1.2.5');
       expect(version.toShortString()).to.equal('1.2');
+      expect(version.toList()).to.deep.equal([1, 2, 5]);
       expect(version.isValid()).to.be.true;
       expect(version.major()).to.equal(1);
       expect(version.minor()).to.equal(2);
@@ -101,7 +102,7 @@ describe('semanticVersion', () => {
   });
 
   describe('compare semantic versions', () => {
-    it('semantic version is same', () => {
+    it('should determine that semantic version is same', () => {
       const a = semanticVersion('1.2.10');
       const b = semanticVersion('1.2.10');
       expect(a.isNewer(b)).to.be.false;
@@ -112,7 +113,7 @@ describe('semanticVersion', () => {
       expect(semanticVersion.compare(a, b)).to.equal(0);
     });
 
-    it('semantic version is newer', () => {
+    it('should determine that semantic version is newer', () => {
       const a = semanticVersion('1.2.1');
       const b = semanticVersion('1.1.5');
       expect(a.isNewer(b)).to.be.true;
@@ -123,7 +124,7 @@ describe('semanticVersion', () => {
       expect(semanticVersion.compare(a, b)).to.equal(1);
     });
 
-    it('semantic version is newer, string version', () => {
+    it('should determine that semantic version is newer, string version', () => {
       const a = semanticVersion('1.2.1');
       const b = '1.1.24';
       expect(a.isNewer(b)).to.be.true;
@@ -133,7 +134,7 @@ describe('semanticVersion', () => {
       expect(a.isSameOrOlder(b)).to.be.false;
     });
 
-    it('semantic version is newer, number list version', () => {
+    it('should determine that semantic version is newer, number list version', () => {
       const a = semanticVersion('1.2.1');
       const b = [0, 5, 2];
       expect(a.isNewer(b)).to.be.true;
@@ -143,7 +144,7 @@ describe('semanticVersion', () => {
       expect(a.isSameOrOlder(b)).to.be.false;
     });
 
-    it('semantic version is older', () => {
+    it('should determine that semantic version is older', () => {
       const a = semanticVersion('1.1.1');
       const b = semanticVersion('1.1.5');
       expect(a.isNewer(b)).to.be.false;
@@ -154,10 +155,22 @@ describe('semanticVersion', () => {
       expect(semanticVersion.compare(a, b)).to.equal(-1);
     });
 
-    it('sort semantic versions', () => {
+    it('should sort semantic versions', () => {
       const versions = ['1.2.4', '1.0.1', '1.5.3', '1', '0.1.0', '4.5', '1.2.1', '2.1.3'];
       versions.sort(semanticVersion.compare);
       expect(versions).to.deep.equal(['0.1.0', '1', '1.0.1', '1.2.1', '1.2.4', '1.5.3', '2.1.3', '4.5']);
+    });
+
+    it('should sort semantic versions by latest', () => {
+      const versions = ['1.2.4', '1.0.1', '1.5.3', '1', '0.1.0', '4.5', '1.2.1', '2.1.3'];
+      versions.sort(semanticVersion.compareByLatest);
+      expect(versions).to.deep.equal(['4.5', '2.1.3', '1.5.3', '1.2.4', '1.2.1', '1.0.1', '1', '0.1.0']);
+    });
+
+    it('should validate a semantic version', () => {
+      expect(semanticVersion.isValid('1.2.3')).to.be.true;
+      expect((semanticVersion as any).isValid({})).to.be.false;
+      expect(semanticVersion.isValid([1, 2, -2])).to.be.false;
     });
   });
 });
