@@ -72,10 +72,7 @@ const extractVersionNumbers = (version: SemanticVersion | string | number | numb
  * @param other A list of numbers containing minor and patch version numbers (both optional). Only valid if a version is a number.
  *
  */
-const semanticVersion = (
-  version: SemanticVersion | string | number | number[],
-  ...other: number[]
-): SemanticVersion => {
+function semanticVersion(version: SemanticVersion | string | number | number[], ...other: number[]): SemanticVersion {
   const versionNumbers = extractVersionNumbers(version, other);
   const self = {
     _type: 'SemanticVersion',
@@ -117,7 +114,7 @@ const semanticVersion = (
   };
 
   return self;
-};
+}
 
 /**
  * Compares two semantic versions. Both arguments will be parsed as a semantic version, if not already so. Can be used as a sort function.
