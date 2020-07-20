@@ -128,12 +128,8 @@ function semanticVersion(version: SemanticVersion | string | number | number[], 
  *
  * @param v1 A version
  * @param v2 A version
- *
  */
-semanticVersion.compare = (
-  v1: SemanticVersion | number[] | string,
-  v2: SemanticVersion | number[] | string
-): number => {
+function compare(v1: SemanticVersion | number[] | string, v2: SemanticVersion | number[] | string): number {
   const version1 = semanticVersion(v1);
   if (version1.isNewer(v2)) {
     return 1;
@@ -142,7 +138,8 @@ semanticVersion.compare = (
     return -1;
   }
   return 0;
-};
+}
+semanticVersion.compare = compare;
 
 /**
  * Compares two semantic versions, the later / newer version is considered as lesser one. Both arguments will be parsed as a semantic version, if not already so. Can be used as a sort function.
@@ -157,12 +154,10 @@ semanticVersion.compare = (
  * @param v1 A version
  * @param v2 A version
  */
-semanticVersion.compareByLatest = (
-  v1: SemanticVersion | number[] | string,
-  v2: SemanticVersion | number[] | string
-): number => {
+function compareByLatest(v1: SemanticVersion | number[] | string, v2: SemanticVersion | number[] | string): number {
   return semanticVersion.compare(v2, v1);
-};
+}
+semanticVersion.compareByLatest = compareByLatest;
 
 /**
  * You can check whether the semanticVersion considers the semantic version to be invalid. The first argument will be parsed as a semantic version, if not already so.
@@ -175,9 +170,10 @@ semanticVersion.compareByLatest = (
  *
  * @param v A version
  */
-semanticVersion.isValid = (v: SemanticVersion | number[] | string): boolean => {
+function isValid(v: SemanticVersion | number[] | string): boolean {
   const version = semanticVersion(v);
   return version.isValid();
-};
+}
+semanticVersion.isValid = isValid;
 
 export { semanticVersion, SemanticVersion };

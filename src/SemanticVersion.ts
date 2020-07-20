@@ -3,6 +3,7 @@ export interface SemanticVersion {
    * For internal use.
    */
   readonly _type: string;
+
   /**
    * You can check whether the semanticVersion considers the semantic version to be invalid.
    *
@@ -14,6 +15,7 @@ export interface SemanticVersion {
    * ```
    */
   isValid(): boolean;
+
   /**
    * Returns the major version.
    *
@@ -23,6 +25,7 @@ export interface SemanticVersion {
    * ```
    */
   major(): number;
+
   /**
    * Returns the minor version.
    *
@@ -32,6 +35,7 @@ export interface SemanticVersion {
    * ```
    */
   minor(): number;
+
   /**
    * Returns the patch version.
    *
@@ -41,6 +45,7 @@ export interface SemanticVersion {
    * ```
    */
   patch(): number;
+
   /**
    * Checks if a semantic version is the same as another semantic version. The first argument will be parsed as a semantic version, if not already so.
    *
@@ -53,6 +58,7 @@ export interface SemanticVersion {
    * @param v A version
    */
   isSame(v: SemanticVersion | number[] | string): boolean;
+
   /**
    * Checks if a semantic version is older as another semantic version. The first argument will be parsed as a semantic version, if not already so.
    *
@@ -65,6 +71,7 @@ export interface SemanticVersion {
    * @param v A version
    */
   isOlder(v: SemanticVersion | number[] | string): boolean;
+
   /**
    * Checks if a semantic version is older or the same as another semantic version. The first argument will be parsed as a semantic version, if not already so.
    *
@@ -77,6 +84,7 @@ export interface SemanticVersion {
    * @param v A version
    */
   isSameOrOlder(v: SemanticVersion | number[] | string): boolean;
+
   /**
    * Checks if a semantic version is newer as another semantic version. The first argument will be parsed as a semantic version, if not already so.
    *
@@ -89,6 +97,7 @@ export interface SemanticVersion {
    * @param v A version
    */
   isNewer(v: SemanticVersion | number[] | string): boolean;
+
   /**
    * Checks if a semantic version is newer or the same as another semantic version. The first argument will be parsed as a semantic version, if not already so.
    *
@@ -101,6 +110,7 @@ export interface SemanticVersion {
    * @param v A version
    */
   isSameOrNewer(v: SemanticVersion | number[] | string): boolean;
+
   /**
    * Returns a semantic version as a list of numbers -> [major, minor, patch].
    *
@@ -110,6 +120,7 @@ export interface SemanticVersion {
    * ```
    */
   toList(): number[];
+
   /**
    * Returns a semantic version as a string containing major and minor version.
    *
@@ -119,6 +130,7 @@ export interface SemanticVersion {
    * ```
    */
   toShortString(): string;
+
   /**
    * Returns a semantic version as a string.
    *

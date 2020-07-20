@@ -1,4 +1,8 @@
-# Interface: SemanticVersion
+# SemanticVersion
+
+## Hierarchy
+
+- **SemanticVersion**
 
 ## Index
 
