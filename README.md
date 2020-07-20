@@ -10,7 +10,7 @@ Semantic versioning utility. Helps you validate and compare semantic versions.
 
 ## Import package
 
-```javascript
+```typescript
 import { semanticVersion } from '@semantics/semantic-version';
 // or
 const { semanticVersion } = require('@semantics/semantic-version');
@@ -19,6 +19,13 @@ const { semanticVersion } = require('@semantics/semantic-version');
 ## Usage
 
 ```typescript
+const v = semanticVersion('1.2.1');
+v.isValid(); // true
+v.isNewer('1.1.5'); // true
+v.isOlder('1.3.0'); // true
+
+const versions = ['1.2.4', '1.0.1', '1.5.3', '1', '0.1.0', '4.5', '1.2.1', '2.1.3'];
+versions.sort(semanticVersion.compareByLatest); // ['4.5', '2.1.3', '1.5.3', '1.2.4', '1.2.1', '1.0.1', '1', '0.1.0']
 ```
 
 ## Docs
