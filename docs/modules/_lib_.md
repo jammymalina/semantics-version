@@ -5,15 +5,15 @@
 ### Functions
 
 - [semanticVersion](_lib_.md#semanticversion)
-- [semanticVersion.compare](_lib_.md#semanticversion.compare)
-- [semanticVersion/compareByLatest](_lib_.md#semanticversion.comparebylatest)
-- [semanticVersion.isValid](_lib_.md#semanticversion.isvalid)
+- [semanticVersion.compare](_lib_.md#semanticversioncompare)
+- [semanticVersion/compareByLatest](_lib_.md#semanticversioncomparebylatest)
+- [semanticVersion.isValid](_lib_.md#semanticversionisvalid)
 
 ## Functions
 
 ### semanticVersion
 
-▸ **semanticVersion**(`version`: [SemanticVersion](../interfaces/_semanticversion_.semanticversion.md) | string | number | number[], ...`other`: number[]): _[SemanticVersion](../interfaces/\_semanticversion_.semanticversion.md)\_
+▸ **semanticVersion**(`version`: [SemanticVersion](../interfaces/_semanticversion_.semanticversion.md) | string | number | number[], ...`other`: number[]): [SemanticVersion](../interfaces/_semanticversion_.semanticversion.md)
 
 Creates SemanticVersion from a string, a number, a list of numbers or SemanticVersion.
 
