@@ -1,8 +1,6 @@
+[**Documentation**](../../README.md#docs)
+
 # SemanticVersion
-
-## Hierarchy
-
-- **SemanticVersion**
 
 ## Index
 
