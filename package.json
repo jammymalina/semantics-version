@@ -9,7 +9,7 @@
     "test": "mocha -r ts-node/register test/unit/**/*.ts",
     "coverage": "nyc mocha -r ts-node/register test/unit/**/*.ts",
     "lint": "eslint './{src,test}/**/*.ts'",
-    "generate-docs": "typedoc --stripInternal --disableSources"
+    "generate-docs": "rm -rf docs && typedoc --stripInternal --disableSources"
   },
   "repository": {
     "type": "git",

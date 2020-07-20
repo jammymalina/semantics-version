@@ -49,8 +49,6 @@ const extractVersionNumbers = (version: SemanticVersion | string | number | numb
 
 /**
  * Creates SemanticVersion from a string, a number, a list of numbers or SemanticVersion.
- * @param version A semantic version.
- * @param other A list of numbers containing minor and patch version numbers (both optional). Only valid if a version is a number.
  *
  * **Usage**
  * ```typescript
@@ -69,6 +67,10 @@ const extractVersionNumbers = (version: SemanticVersion | string | number | numb
  * semanticVersion([1, 2]); // 1.2.0
  * semanticVersion([1]); // 1.0.0
  * ```
+ *
+ * @param version A semantic version.
+ * @param other A list of numbers containing minor and patch version numbers (both optional). Only valid if a version is a number.
+ *
  */
 const semanticVersion = (
   version: SemanticVersion | string | number | number[],
@@ -119,8 +121,6 @@ const semanticVersion = (
 
 /**
  * Compares two semantic versions. Both arguments will be parsed as a semantic version, if not already so. Can be used as a sort function.
- * @param v1 A version
- * @param v2 A version
  *
  * **Usage**
  * ```typescript
@@ -128,6 +128,10 @@ const semanticVersion = (
  * versions.sort(semanticVersion.compare);
  * console.log(versions); // ['0.1.0', '1', '1.0.1', '1.2.1', '1.2.4', '1.5.3', '2.1.3', '4.5']
  * ```
+ *
+ * @param v1 A version
+ * @param v2 A version
+ *
  */
 semanticVersion.compare = (
   v1: SemanticVersion | number[] | string,
@@ -145,8 +149,6 @@ semanticVersion.compare = (
 
 /**
  * Compares two semantic versions, the later / newer version is considered as lesser one. Both arguments will be parsed as a semantic version, if not already so. Can be used as a sort function.
- * @param v1 A version
- * @param v2 A version
  *
  * **Usage**
  * ```typescript
@@ -154,6 +156,9 @@ semanticVersion.compare = (
  * versions.sort(semanticVersion.compareByLatest);
  * console.log(versions); // ['4.5', '2.1.3', '1.5.3', '1.2.4', '1.2.1', '1.0.1', '1', '0.1.0']
  * ```
+ *
+ * @param v1 A version
+ * @param v2 A version
  */
 semanticVersion.compareByLatest = (
   v1: SemanticVersion | number[] | string,
@@ -164,13 +169,14 @@ semanticVersion.compareByLatest = (
 
 /**
  * You can check whether the semanticVersion considers the semantic version to be invalid. The first argument will be parsed as a semantic version, if not already so.
- * @param v A version
  *
  * **Usage**
  * ```typescript
  * semanticVersion.isValid('1.2.3'); // true
  * semanticVersion.isValid([1, 2, -2]); // false
  * ```
+ *
+ * @param v A version
  */
 semanticVersion.isValid = (v: SemanticVersion | number[] | string): boolean => {
   const version = semanticVersion(v);

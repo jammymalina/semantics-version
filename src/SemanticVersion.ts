@@ -43,57 +43,62 @@ export interface SemanticVersion {
   patch(): number;
   /**
    * Checks if a semantic version is the same as another semantic version. The first argument will be parsed as a semantic version, if not already so.
-   * @param v A version
    *
    * **Usage**
    * ```typescript
    * semanticVersion('1.2.3').isSame('1.2.3'); // true
    * semanticVersion('1.2.3').isSame([1, 2, 3]); // true
    * ```
+   *
+   * @param v A version
    */
   isSame(v: SemanticVersion | number[] | string): boolean;
   /**
    * Checks if a semantic version is older as another semantic version. The first argument will be parsed as a semantic version, if not already so.
-   * @param v A version
    *
    * **Usage**
    * ```typescript
    * semanticVersion('1.1.3').isOlder('1.2.3'); // true
    * semanticVersion('1.1.3').isOlder([1, 2, 3]); // true
    * ```
+   *
+   * @param v A version
    */
   isOlder(v: SemanticVersion | number[] | string): boolean;
   /**
    * Checks if a semantic version is older or the same as another semantic version. The first argument will be parsed as a semantic version, if not already so.
-   * @param v A version
    *
    * **Usage**
    * ```typescript
    * semanticVersion('1.1.5').isSameOrOlder('1.2.1'); // true
    * semanticVersion('1.1.5').isSameOrOlder([1, 2, 1]); // true
    * ```
+   *
+   * @param v A version
    */
   isSameOrOlder(v: SemanticVersion | number[] | string): boolean;
   /**
    * Checks if a semantic version is newer as another semantic version. The first argument will be parsed as a semantic version, if not already so.
-   * @param v A version
    *
    * **Usage**
    * ```typescript
    * semanticVersion('1.3.0').isNewer('1.2.6'); // true
    * semanticVersion('1.3.0').isNewer([1, 2, 6]); // true
    * ```
+   *
+   * @param v A version
    */
   isNewer(v: SemanticVersion | number[] | string): boolean;
   /**
    * Checks if a semantic version is newer or the same as another semantic version. The first argument will be parsed as a semantic version, if not already so.
-   * @param v A version
    *
    * **Usage**
    * ```typescript
    * semanticVersion('1.4.3').isSameOrNewer('1.3.2'); // true
    * semanticVersion('1.4.3').isSameOrNewer([1, 3, 2]); // true
    * ```
+   *
+   * @param v A version
    */
   isSameOrNewer(v: SemanticVersion | number[] | string): boolean;
   /**
