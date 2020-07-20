@@ -1,4 +1,4 @@
-[**Documentation**](../../README.md#docs)
+[@semantics/semantic-version](../../README.md#docs) › [SemanticVersion](_semanticversion_.semanticversion.md)
 
 # SemanticVersion
 

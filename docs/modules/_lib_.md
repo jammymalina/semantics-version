@@ -1,3 +1,5 @@
+[@semantics/semantic-version](../../README.md#docs) › [semanticVersion()](_lib_.md)
+
 # semanticVersion()
 
 ## Index
